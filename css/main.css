@@ -1,8 +1,48 @@
-legend {font-family: 'PT Serif Caption', serif;}
+@import url(http://fonts.googleapis.com/css?family=Anton&subset=latin,latin-ext);
 
-li {font-family: 'PT Serif', serif;}
+body {
+	font-size: 16px;
+}
 
-.container {
-    margin: 0 auto;
-    width:960px; 
+#nav {
+	font-family: 'Anton', sans-serif;
+	width: 270px;
+	display: block;
+	position: fixed;
+	overflow: auto;
+	height: 100%;
+	top:333
+	bottom: 0;
+	left: 0;
+}
+
+#nav_inner {
+	padding: 10px 30px 30px 30px;
+}
+
+#nav h1, h2 {
+	color: #333;
+}
+
+#nav h1 {
+	font-size: 40px;
+	margin: 0;
+	line-height: 40px;
+}
+
+#nav h2 {
+	font-size: 20px;
+	line-height: 20px;
+	margin: 0 0 40px 0;
+
+}
+
+#nav a {
+	display: block;
+	line-height: 50px;
+}
+
+#container {
+	width: 610px;
+	margin-left: 330px;
 }
