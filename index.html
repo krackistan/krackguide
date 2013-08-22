@@ -5,8 +5,6 @@
 <link href='http://fonts.googleapis.com/css?family=Doppio+One|Maven+Pro' rel='stylesheet' type='text/css'>
 <title>Krackguide: How to CZ</title>
 
-<script type="text/javascript" src="jquery-1.3.2.min.js"></script>
-
 </head>
 
 <body>
@@ -24,7 +22,7 @@
 </div>
 <div id="container">
     <!-- Food section -->
-    <div class="food">
+    <div id="food">
         <h1>Bread</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -34,7 +32,7 @@
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
     <!-- Living section -->
-    <div class="living">
+    <div id="living">
         <h1>Hearth</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -44,7 +42,7 @@
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
     <!-- Network section -->
-    <div class="network">
+    <div id="network">
         <h1>Network</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -54,7 +52,7 @@
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
     <!-- Workship section -->
-    <div class="workshift">
+    <div id="workshift">
         <h1>Labor</h1>
         <h2>Hallways</h2>
         <ul>
@@ -131,7 +129,7 @@
         </ul>
     </div>
     <!-- HI section -->
-    <div class="hi">
+    <div id="hi">
         <h1>Expressive Dynamism</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -141,7 +139,7 @@
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
     <!-- Maintenance section -->
-    <div class="maintenance">
+    <div id="maintenance">
         <h1>Controlled Decay</h1>
         <h2>Requesting a Fix</h2>
         <p>E-mail cazmm@bsc.coop.  E-mail is much more reliable and easier to look back on than any other medium for communication.  You can also write it into the Maintenance Request sheets posted on the Maintenance Room and on the Maintenance Manager's room door.</p>
@@ -182,5 +180,30 @@
 <script>window.jQuery || document.write('<script src="js/jquery-1.9.0.min.js"><\/script>')</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
 <script src="js/jquery-scrollspy.js"></script>
+<script>
+$(document).ready(function(){
+$('#container div').each(function(i) {
+    var position = $(this).position();
+    $(this).scrollspy({
+    min: position.top,
+    max: position.top + $(this).height(),
+    onEnter: function(element, position) {
+        $('.' + element.id).addClass('active');
+    },
+    onLeave: function(element, position) {
+        $('.' + element.id).removeClass('active');
+    }
+    });
+});
+
+$('#nav a').click(function(){
+        var ref = $(this).attr('class');
+        $('html body').animate({
+        scrollTop: $('#' + ref).offset().top
+    }, 300);
+    return false;
+    });
+});
+</script>
 </body>
 </html>
