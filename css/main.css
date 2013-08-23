@@ -61,3 +61,7 @@ body {
 	font-family: "Open Sans", sans-serif;
 	line-height: 40px;
 }
+
+#footer {
+    padding-bottom: 69px;
+}
