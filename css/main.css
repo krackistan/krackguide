@@ -38,6 +38,12 @@ body {
 	margin: 0 0 40px 0;
 }
 
+#nav h3 {
+	font-size: 13px;
+	line-height: 13px;
+	margin: 0 0 40px 0;
+}
+
 #nav a {
 	display: block;
 	line-height: 50px;
